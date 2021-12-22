@@ -1,6 +1,6 @@
 # Shepherd
 
-![In action!](https://i.imgur.com/AnwQnUy.gif)
+![In action!](/art/preview.gif)
 
 Shepherd is a super simple Discord bot that utilizes the new [Time Out feature](https://support.discord.com/hc/en-us/articles/4413305239191) to control message spam.
 
