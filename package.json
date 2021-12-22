@@ -1,0 +1,49 @@
+{
+	"name": "shepherd",
+	"version": "0.1.0",
+	"author": "depthbomb",
+	"description": "Super simple anti-spam bot utilizing Discord's new Time Out feature",
+	"keywords": [
+		"discord",
+		"discord.js",
+		"bot",
+		"moderation",
+		"administration"
+	],
+	"license": "GPLv3",
+	"main": "dist/index.js",
+	"scripts": {
+		"start": "node .",
+		"precompile": "rimraf ./dist/*",
+		"compile": "tsc",
+		"lint": "eslint ./src --ext .ts"
+	},
+	"dependencies": {
+		"@discordjs/builders": "^0.9.0",
+		"@discordjs/rest": "^0.2.0-canary.0",
+		"@sapphire/ratelimits": "^2.1.10",
+		"bufferutil": "^4.0.5",
+		"discord-api-types": "^0.25.2",
+		"discord.js": "^13.3.1",
+		"erlpack": "^0.1.3",
+		"glob": "^7.2.0",
+		"ms": "^3.0.0-canary.1",
+		"source-map-support": "^0.5.21",
+		"tslib": "^2.3.1",
+		"utf-8-validate": "^5.0.7",
+		"zlib-sync": "^0.1.7"
+	},
+	"devDependencies": {
+		"@tsconfig/recommended": "^1.0.1",
+		"@types/eslint": "^8.2.1",
+		"@types/glob": "^7.2.0",
+		"@types/node": "^17.0.2",
+		"@types/rimraf": "^3.0.2",
+		"@types/source-map-support": "^0.5.4",
+		"@typescript-eslint/eslint-plugin": "^5.8.0",
+		"@typescript-eslint/parser": "^5.8.0",
+		"eslint": "^8.5.0",
+		"rimraf": "^3.0.2",
+		"typescript": "^4.5.4"
+	}
+}

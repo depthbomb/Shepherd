@@ -1,0 +1,53 @@
+import type { StringValue } from 'ms';
+
+/**
+ * Your bot's token.
+ */
+export const botToken: string = '';
+
+/**
+ * The ID of the user who owns this bot, of whom will be exempt from punishments.
+ */
+export const ownerId: string = '';
+
+/**
+ * The amount of time in milliseconds for a rate limit to expire.
+ */
+export const rateLimitTimeout: number = 5000;
+
+/**
+ * The amount of times a rate limit can be consumed before it is limited within the timeout.
+ */
+export const rateLimitLimit: number = 3;
+
+/**
+ * The duration in `ms` time that the time out should last.
+ * 
+ * 10s = 10 seconds,
+ * 5m = 5 minutes,
+ * 1h = 1 hour,
+ * etc...
+ * 
+ * Read more here https://github.com/vercel/ms#examples
+ */
+export const timeOutDuration: StringValue = '5m';
+
+/**
+ * Whether to send a message in the channel in which the timeout was applied to announce that the user has been timed out and for what {@link reason}.
+ */
+export const announcePunishment: boolean = true;
+
+/**
+ * The reason for the time out used in the announcement, if enabled.
+ */
+export const reason: string | null = 'Stop spamming!!';
+
+/**
+ * Array of IDs of users who are exempt from anti-spam.
+ */
+export const ignoredUsers: string[] = [];
+
+/**
+ * Array of IDs of roles that are exempt from anti-spam.
+ */
+export const ignoredRoles: string[] = [];
