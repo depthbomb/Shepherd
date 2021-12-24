@@ -1,12 +1,9 @@
 import ms from 'ms';
-import { REST } from '@discordjs/rest';
-import { Routes } from 'discord-api-types/v9';
 import { RateLimitManager } from '@sapphire/ratelimits';
-import { rateLimitLimit, rateLimitTimeout, ignoredUsers, ignoredRoles, botToken, timeOutDuration, announcePunishment, reason } from '../config';
+import { rateLimitLimit, rateLimitTimeout, ignoredUsers, ignoredRoles, timeOutDuration, announcePunishment, reason } from '../config';
 
 import { Message, GuildMember, Formatters } from 'discord.js';
 
-const rest: REST = new REST({ version: '9' }).setToken(botToken);
 const manager: RateLimitManager = new RateLimitManager(rateLimitTimeout, rateLimitLimit);
 
 function _exempt(member: GuildMember): boolean {
@@ -31,9 +28,7 @@ export const handle = async (message: Message) => {
 			const date = new Date();
 			date.setMilliseconds(date.getMilliseconds() + duration);
 			try {
-				await rest.patch(Routes.guildMember(guild.id, author.id), {
-					body: { communication_disabled_until: date.toISOString() }
-				});
+				await member.disableCommunicationUntil(date);
 
 				if (announcePunishment) {
 					await message.channel.send(`${member} has been timed out until **${Formatters.time(date, 'F')}**. ${reason ? `\n\n**Reason:** ${reason}` : ''}`);
